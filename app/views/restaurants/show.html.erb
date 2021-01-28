@@ -1,0 +1,10 @@
+<h1><%= @restaurant.name %></h1>
+<% if @restaurant.reviews.size > 0 %>
+  <h2>Reviews</h2>
+  <% @reviews.each do |review| %>
+    <p><%= review.content %></p>
+    <p><%= review.rating %></p>
+  <% end %>
+<% end %>
+
+<%= link_to 'New review', new_restaurant_review_path(@restaurant) %>
